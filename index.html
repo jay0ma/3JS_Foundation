@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0c" />
+    <title>Core vs. Rim — A Driving Piece</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- 3D Canvas mount -->
+    <div id="stage"></div>
+
+    <!-- HUD: distance meter + status pill -->
+    <div class="hud" aria-hidden="false">
+      <div class="hud__brand">
+        <span class="hud__brand-mark"></span>
+        <span class="hud__brand-text">CORE / RIM</span>
+      </div>
+      <div class="hud__meter" role="status" aria-live="polite">
+        <div class="hud__meter-label">Distance from center</div>
+        <div class="hud__meter-value">
+          <span id="distValue">0.0</span><span class="hud__meter-unit">u</span>
+        </div>
+        <div class="hud__meter-bar"><div class="hud__meter-fill" id="distFill"></div></div>
+        <div class="hud__zone" id="zoneLabel">CHAOS — OUTER RIM</div>
+      </div>
+      <div class="hud__hint">
+        <span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span
+        ><span class="kbd">D</span> drive
+        &nbsp;·&nbsp; <span class="kbd">Space</span> brake
+      </div>
+    </div>
+
+    <!-- Audio unlock gate (browsers require a user gesture) -->
+    <div class="gate" id="audioGate">
+      <div class="gate__card">
+        <div class="gate__eyebrow">THERE IS NOT JUST ONE WAY TO BE</div>
+        <h1 class="gate__title">Core <span class="gate__sep">/</span> Rim</h1>
+        <p class="gate__body">
+          A small low-poly car on a single island — an art piece about
+          being seen as one thing while living as many. Drive inward, past
+          the chaos and the winding path, to the structured core. Two
+          monuments await. They have questions.
+        </p>
+        <button class="gate__btn" id="startBtn" type="button">Enter the island</button>
+        <div class="gate__foot">W A S D drive &nbsp;·&nbsp; SPACE brake &nbsp;·&nbsp; audio synthesized at runtime</div>
+      </div>
+    </div>
+
+    <!-- Modal: Audio Monument -->
+    <div class="modal" id="modalAudio" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalAudioTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument I — The Audio Pillar</div>
+        <h2 class="modal__title" id="modalAudioTitle">The headphones, the cables, the rabbit hole.</h2>
+        <p class="modal__body" id="modalAudioBody">
+          I own three cables that measure nearly identical. I can tell you the soundstage width of
+          the Simgot EW300 versus the Zero:Red. My friends call it obsessive. But there's something
+          almost meditative about it — like studying a painting, except you live inside the painting.
+          Is it a problem, or is it how some of us love music?
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalAudio" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Structural Monument -->
+    <div class="modal" id="modalStructure" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalStructureTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument II — The Structural Pillar</div>
+        <h2 class="modal__title" id="modalStructureTitle">The invisible architecture.</h2>
+        <p class="modal__body" id="modalStructureBody">
+          React Native. Vercel. AeroSpace. My code is in your pocket, your browser, your commute.
+          And I shipped it from my apartment, alone, probably at 2am. Society says programmers are
+          basement hermits. Maybe we're just building things that outgrow the rooms they came from.
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalStructure" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
