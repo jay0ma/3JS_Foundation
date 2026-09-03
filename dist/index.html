@@ -11,8 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-CqK81S1L.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C-vz-bE1.css">
+    <script type="module" crossorigin src="/assets/index-D11_PnFj.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CfakoSdp.css">
   </head>
   <body>
     <!-- 3D Canvas mount -->
@@ -39,16 +39,15 @@
       </div>
     </div>
 
-    <!-- Audio unlock gate (browsers require a user gesture) -->
+    <!-- Audio unlock gate -->
     <div class="gate" id="audioGate">
       <div class="gate__card">
         <div class="gate__eyebrow">THERE IS NOT JUST ONE WAY TO BE</div>
         <h1 class="gate__title">Core <span class="gate__sep">/</span> Rim</h1>
         <p class="gate__body">
-          A small low-poly car on a single island — an art piece about
-          being seen as one thing while living as many. Drive inward, past
-          the chaos and the winding path, to the structured core. Two
-          monuments await. They have questions.
+          A small low-poly car on a single island — an art piece about being seen as one thing
+          while living as many. Drive inward, past the chaos and the winding path, to the
+          structured core. Eight monuments await. They have questions.
         </p>
         <button class="gate__btn" id="startBtn" type="button">Enter the island</button>
         <div class="gate__foot">W A S D drive &nbsp;·&nbsp; SPACE brake &nbsp;·&nbsp; audio synthesized at runtime</div>
@@ -84,6 +83,106 @@
         </p>
         <div class="modal__actions">
           <button class="btn" data-resume="modalStructure" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Cultural Monument -->
+    <div class="modal" id="modalCultural" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalCulturalTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument III — The Cultural Pillar</div>
+        <h2 class="modal__title" id="modalCulturalTitle">The model minority myth, and the cost of performing it.</h2>
+        <p class="modal__body" id="modalCulturalBody">
+          People assume I'm good at math before I open my mouth. They assume I'm quiet because I'm
+          Asian. When I do speak up, I'm "different." When I don't, I'm "typical." I didn't ask
+          to be a stereotype. I just wanted to exist without having to represent an entire race.
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalCultural" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Achievement Monument -->
+    <div class="modal" id="modalAcademic" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalAcademicTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument IV — The Achievement Pillar</div>
+        <h2 class="modal__title" id="modalAcademicTitle">The grade, the worth, and the silence between.</h2>
+        <p class="modal__body" id="modalAcademicBody">
+          My transcript is clean. My sense of self is not. Somewhere along the way, "being good at
+          school" became the only dimension anyone cared about. Now I code at 3am chasing that same
+          validation from a different authority — shipped commits, not report cards.
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalAcademic" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Gamer Monument -->
+    <div class="modal" id="modalGamer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalGamerTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument V — The Gamer Pillar</div>
+        <h2 class="modal__title" id="modalGamerTitle">The rank, the grind, and what nobody talks about.</h2>
+        <p class="modal__body" id="modalGamerBody">
+          I hit Grandmaster. Then I hit a wall. Turns out climbing the ladder feels a lot like
+          escaping something. Gaming was my safe world — where the rules were clear and skill
+          mattered. Real life doesn't have an ELO. It took me a long time to admit that being
+          good at a game didn't teach me how to be good at being a person.
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalGamer" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Imposter Monument -->
+    <div class="modal" id="modalImposter" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalImposterTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument VI — The Imposter Pillar</div>
+        <h2 class="modal__title" id="modalImposterTitle">The 50k-user delusion.</h2>
+        <p class="modal__body" id="modalImposterBody">
+          50,000 people opened my app today. And I sat there thinking: when are they going to figure
+          out I'm just guessing? The code works but I don't know why half of it works. I'm either
+          genuinely good or the luckiest fraud alive. Most days I can't tell the difference. Maybe
+          that's just what shipping things feels like.
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalImposter" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Musician Monument -->
+    <div class="modal" id="modalMusician" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalMusicianTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument VII — The Musician Pillar</div>
+        <h2 class="modal__title" id="modalMusicianTitle">The genre nobody respects, and the joy nobody can take.</h2>
+        <p class="modal__body" id="modalMusicianBody">
+          My parents wanted classical. I found electronic. They don't understand how sitting at a
+          piano — with a midi controller and four synthesizers — is still playing piano. Music school
+          kids look at me sideways. Tech kids think it's a hobby. It's neither. It's the most honest
+          thing I do.
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalMusician" type="button">Resume · push back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Creator Monument -->
+    <div class="modal" id="modalCreator" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalCreatorTitle">
+      <div class="modal__panel">
+        <div class="modal__eyebrow">Monument VIII — The Creator Pillar</div>
+        <h2 class="modal__title" id="modalCreatorTitle">The builder, and the builder's builder, and the builder's builder's builder.</h2>
+        <p class="modal__body" id="modalCreatorBody">
+          I make things that help people feel less alone. I shipped a meditation app. I still can't
+          meditate. I built a social platform that helps people make friends. I have three close ones.
+          There's a strange guilt in being the person who builds the raft while sitting in the water
+          alone. Maybe the raft is enough. Maybe I need to swim too.
+        </p>
+        <div class="modal__actions">
+          <button class="btn" data-resume="modalCreator" type="button">Resume · push back</button>
         </div>
       </div>
     </div>
