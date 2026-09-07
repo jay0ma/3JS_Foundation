@@ -1,9 +1,9 @@
 /**
  * main.js
- * Orchestrator. Boots Three.js + Cannon-es, wires up the world,
- * the vehicle, the audio, the monuments and the modals.
+ * Orchestrator. Boots Three.js + Cannon-es, wires up the world.
  */
 
+import '../style.css';
 import * as THREE from 'three';
 import * as CANNON from 'cannon-es';
 
@@ -64,7 +64,7 @@ world.allowSleep = false;
 world.defaultContactMaterial.friction = 0.95;
 world.defaultContactMaterial.restitution = 0.0;
 
-const { groundBody } = buildTerrain(scene, world);
+const { groundBody, koiGroup, codeSnippets } = buildTerrain(scene, world);
 
 const car = createVehicle({ scene, world, spawn: new THREE.Vector3(0, 0.4, 50) });
 const monuments = createMonuments(scene);
@@ -145,12 +145,31 @@ function tick(now) {
 
   for (const m of monuments) m.update(elapsed);
 
-  // Animate water
+  // Animate water shader
   scene.traverse((obj) => {
     if (obj.isMesh && obj.material && obj.material.uniforms && obj.material.uniforms.uTime) {
       obj.material.uniforms.uTime.value = elapsed;
     }
   });
+
+  // Animate koi fish
+  if (koiGroup && koiGroup.userData && koiGroup.userData.koiFish) {
+    for (const fish of koiGroup.userData.koiFish) {
+      fish.userData.angle += fish.userData.speed * dt;
+      fish.position.x = fish.userData.pondX + Math.cos(fish.userData.angle) * fish.userData.radius;
+      fish.position.z = fish.userData.pondZ + Math.sin(fish.userData.angle) * fish.userData.radius;
+      fish.position.y = fish.userData.depth + Math.sin(fish.userData.angle * 2) * 0.05;
+      fish.rotation.y = -fish.userData.angle + Math.PI / 2;
+    }
+  }
+
+  // Animate floating code snippets
+  if (codeSnippets) {
+    for (const snippet of codeSnippets) {
+      snippet.rotation.y += snippet.userData.rotSpeed * dt;
+      snippet.position.y = 1.5 + Math.sin(elapsed * 0.5 + snippet.userData.floatOffset) * 0.3;
+    }
+  }
 
   if (!simPaused) {
     const hit = checkMonumentCollision(car, monuments);

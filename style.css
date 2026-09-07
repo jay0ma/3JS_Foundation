@@ -1,6 +1,6 @@
 /* ===========================================================
    Core / Rim — minimalist, frosted-glass UI
-   ============================================================ */
+   =========================================================== */
 
 :root {
   --bg: #07080a;
@@ -20,11 +20,9 @@
 
 html, body {
   margin: 0; padding: 0; height: 100%;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg); color: var(--ink);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.005em;
+  font-weight: 400; letter-spacing: 0.005em;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,9 +31,7 @@ html, body {
 #stage { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
 #stage canvas { display: block; outline: none; }
 
-/* ===========================================================
-   HUD
-   ============================================================ */
+/* HUD */
 .hud {
   position: fixed; top: 20px; left: 20px; z-index: 5;
   display: flex; flex-direction: column; gap: 14px;
@@ -45,8 +41,7 @@ html, body {
 .hud__brand {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 14px 8px 10px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
   border-radius: 999px;
   backdrop-filter: blur(var(--glass-blur)) saturate(140%);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
@@ -123,9 +118,7 @@ html, body {
   border-bottom-width: 2px; border-radius: 5px; margin: 0 2px;
 }
 
-/* ===========================================================
-   Audio unlock gate
-   ============================================================ */
+/* Gate */
 .gate {
   position: fixed; inset: 0; z-index: 20;
   display: grid; place-items: center;
@@ -158,9 +151,7 @@ html, body {
 
 .gate__sep { color: var(--ink-faint); font-weight: 300; margin: 0 4px; }
 
-.gate__body {
-  margin: 0 0 24px; font-size: 14.5px; line-height: 1.6; color: var(--ink-dim);
-}
+.gate__body { margin: 0 0 24px; font-size: 14.5px; line-height: 1.6; color: var(--ink-dim); }
 
 .gate__btn {
   appearance: none; border: 1px solid rgba(255,255,255,0.16);
@@ -177,20 +168,16 @@ html, body {
 }
 
 .gate__btn:active { transform: translateY(1px); }
-
 .gate__foot { margin-top: 16px; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; }
 
-/* ===========================================================
-   Modal
-   ============================================================ */
+/* Modal */
 .modal {
   position: fixed; inset: 0; z-index: 30;
   display: grid; place-items: center;
   background: rgba(7,8,10,0.32);
   backdrop-filter: blur(8px) saturate(120%);
   -webkit-backdrop-filter: blur(8px) saturate(120%);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.35s ease;
+  opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
 }
 
 .modal.is-open { opacity: 1; pointer-events: auto; }
@@ -202,8 +189,7 @@ html, body {
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   box-shadow: 0 40px 100px -20px rgba(0,0,0,0.7);
-  transform: translateY(8px) scale(0.985);
-  transition: transform 0.35s ease;
+  transform: translateY(8px) scale(0.985); transition: transform 0.35s ease;
 }
 
 .modal.is-open .modal__panel { transform: translateY(0) scale(1); }
@@ -219,11 +205,7 @@ html, body {
   letter-spacing: -0.005em; line-height: 1.2; color: var(--ink);
 }
 
-.modal__body {
-  margin: 0 0 24px; font-size: 16px; line-height: 1.65;
-  color: var(--ink-dim); font-weight: 300;
-}
-
+.modal__body { margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--ink-dim); font-weight: 300; }
 .modal__actions { display: flex; justify-content: flex-end; gap: 10px; }
 
 .btn {
@@ -242,9 +224,7 @@ html, body {
 
 .btn:active { transform: translateY(1px); }
 
-/* ===========================================================
-   Reduced motion + mobile
-   ============================================================ */
+/* Responsive */
 @media (prefers-reduced-motion: reduce) {
   .gate, .modal, .modal__panel { transition-duration: 0.01ms; }
 }
